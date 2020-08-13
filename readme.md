@@ -14,7 +14,7 @@ OAuth Access tokens can be created here https://twitchapps.com/tmi/
 </tr><tr>
   <td>!deckreview start</td>
   <td>Displays start message and clears decklists.</td>
-  <td>`decklistbot: Decklist reviews started.`</td>
+  <td>decklistbot: Decklist reviews started.</td>
 </tr><tr>
   <td>!deckreview pick</td>
   <td>Chooses a random decklist, displays it, then deletes it from the list.</td>
