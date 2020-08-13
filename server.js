@@ -1,5 +1,5 @@
 const tmi = require('tmi.js');
-const Decklist = require('./decklists');
+const Decklist = require('./decklist');
 
 const opts = {
   identity: {
