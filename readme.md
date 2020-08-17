@@ -12,7 +12,7 @@ OAuth Access tokens can be created here https://twitchapps.com/tmi/
   <td>Info</td>
   <td>Example</td>
 </tr><tr>
-  <td>!deckreview start</td>
+  <td>!deckreview reset</td>
   <td>Displays start message and clears decklists.</td>
   <td>decklistbot: Decklist reviews started.</td>
 </tr><tr>
