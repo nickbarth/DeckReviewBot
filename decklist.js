@@ -3,13 +3,25 @@ var dbFile = './.data/sqlite.db';
 var exists = fs.existsSync(dbFile);
 var sqlite3 = require('sqlite3').verbose();
 var db = new sqlite3.Database(dbFile);
+var cron = require('node-cron');
 
-// delete database
-// fs.unlinkSync(dbFile);
+// start timestamp
+console.log(`* started at ${new Date().toUTCString().toLowerCase()}`);
 
-// if ./.data/sqlite.db does not exist, create it, otherwise print records to console
+// daily decklist reset
+cron.schedule('0 0 0 * * *', () => {
+  console.log('* daily decklist reset');
+  db.serialize(function() {
+    db.run('DELETE FROM Decklists');
+  });
+});
+
+// create table and print decks
 db.serialize(function(){
   db.run('CREATE TABLE IF NOT EXISTS Decklists (username TEXT, deck TEXT)');
+  db.all('SELECT * FROM Decklists', function(err, rows) {
+    console.log('* decks loaded', rows.map(function(list) { return list['username'] }));
+  });
 });
 
 const Decklist = {};
