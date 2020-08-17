@@ -17,16 +17,16 @@ client.on('connected', onConnectedHandler);
 client.connect();
 
 function onConnectedHandler (addr, port) {
-  console.log(`* Connected to ${addr}:${port} #${process.env.CHANNEL_NAME}`);
+  console.log(`* connected to ${addr}:${port} #${process.env.CHANNEL_NAME}`);
 }
 
 function onMessageHandler (target, context, msg, self) {
-  if (self) { return; } // ignore messages from the bot
+  if (self) { return; } // ignore bot messages
 
   const command = msg.trim();
   
   // admin functions
-  if (context.username === process.env.ADMIN && command === '!deckreview start') {
+  if (context.username === process.env.ADMIN && command === '!deckreview reset') {
     // start decklist reviews
     Decklist.reset(function (err) {
       client.say(target, 'Decklist reviews started.');    
