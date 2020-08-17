@@ -1,0 +1,27 @@
+{
+  "name": "DeckReviewBot",
+  "version": "1.0.0",
+  "description": "A Twitch Deck Review Bot",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "tmi.js": "^1.5.0",
+    "sqlite3": "^5.0.0",
+    "node-cron": "^2.0.3"
+  },
+  "engines": {
+    "node": "12.x"
+  },
+  "repository": {
+    "url": "https://github.com/nickbarth/DeckReviewBot"
+  },
+  "license": "public domain",
+  "keywords": [
+    "node",
+    "glitch",
+    "express"
+  ]
+}
